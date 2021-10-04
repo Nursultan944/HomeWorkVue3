@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(53, 65, 84);
+}
+.container{
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    padding: 15px;
+    /*background-color: white;*/
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(50,65,84);
+}
+.card{
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    text-align: start;
+}
+.btn{
+    border-radius: 15px;
+    border: 1px solid rgb(46, 145, 201);
+    color: rgb(46, 145, 201);
+    background-color: white;
+    margin-top: 20px;
+    height: 23px;
+    width: 100px;
+
+}
+
+.primary{
+    border-radius: 15px;
+    border: 1px solid rgb(46, 145, 201);
+    color: white;
+    background-color: rgb(46, 145, 201);
+    margin-top: 20px;
+    height: 23px;
+    width: 135px;
+
+}
+.danger{
+    border-radius: 15px;
+    border: 1px solid rgb(196, 72, 41);
+    color: white;
+    background-color: rgb(196, 72, 41);
+    margin-top: 20px;
+    height: 23px;
+    width: 190px;
+    margin-left: 20px;
+
+}
+
+input{
+    border-radius: 15px;
+    border: 1px solid rgb(46, 145, 201);
+    width: 100%;
+}

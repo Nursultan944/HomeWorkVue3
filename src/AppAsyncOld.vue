@@ -1,0 +1,79 @@
+<template>
+  <div class="container pt-1">
+    <div class="card">
+      <app-async-component></app-async-component>
+      <h2>Динамические и ансинхронные компоненты</h2>
+      <app-button
+        ref="myBtn"
+        :color="oneColor"
+        @action="active= 'one'">One</app-button>
+
+      <app-button
+        :color="twoColor"
+        @action="active= 'two'">Two</app-button>
+
+    </div>
+
+    <keep-alive>
+      <component :is="componentName"></component>
+    </keep-alive>
+
+  </div>
+
+</template>
+
+<script>
+
+import AppButton from './AppButton'
+import AppTextOne from './AppTextOne'
+import AppTextTwo from './AppTextTwo'
+import AppAsyncComponent from './AppAsyncComponent'
+export default {
+  data () {
+    return {
+      active: 'one'
+    }
+  },
+  mounted () {
+    // setTimeout ( ()=> {
+    //   this.componentName ='new comp name'
+    // },1500)
+    console.log(this.$refs.myBtn)
+  },
+  computed: {
+    // componentName() {
+    //  // if (this.active === 'one' ) {
+    //  //   return 'app-text-one'
+    //  // }
+    //  // return 'app-text-two'
+    //   return 'app-text-' +this.active
+    // },
+    componentName: {
+      get () {
+        return 'app-text-' + this.active
+      },
+      set (value) {
+        console.log('componentName', value)
+      }
+
+    },
+    oneColor () {
+      return this.active === 'one' ? 'primary' : ''
+    },
+    twoColor () {
+      return this.active === 'two' ? 'primary' : ''
+    }
+  },
+  components: {
+    AppAsyncComponent,
+    AppButton,
+    AppTextOne,
+    AppTextTwo
+  }
+
+}
+</script>
+
+<style scoped>
+
+</style>
